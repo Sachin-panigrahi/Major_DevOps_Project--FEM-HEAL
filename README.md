@@ -3,8 +3,7 @@
 
 ## Introduction
 
-FEM-HEAL is a comprehensive healthcare management web application specifically designed to cater to female healthcare needs. This project aims to provide a seamless and user-friendly platform for managing various aspects of healthcare, including common disease prediction and ayurvedic medicine recommendations.
-
+FEM-HEAL is a comprehensive healthcare management web application specifically designed to cater to female healthcare needs. This project aims to provide a seamless and user-friendly platform for managing various aspects of healthcare.
 ## Features
 
 - **Common Disease Prediction**: Predict common diseases like flu, cold, headache, diarrhea, constipation, jaundice, dengue, typhoid, malaria, and more.
