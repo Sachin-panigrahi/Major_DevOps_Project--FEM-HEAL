@@ -1,0 +1,31 @@
+<!-- doctor_location.html -->
+<!DOCTYPE html>
+<html>
+<head>
+    <title>{{ doctor.name }}'s Location</title>
+    <style>
+        #map {
+            height: 400px;
+            width: 100%;
+        }
+    </style>
+    <script src="https://maps.googleapis.com/maps/api/js?key="></script>
+    <script>
+        function initMap() {
+            var location = {lat: {{ doctor.latitude }}, lng: {{ doctor.longitude }}};
+            var map = new google.maps.Map(document.getElementById('map'), {
+                zoom: 15,
+                center: location
+            });
+            new google.maps.Marker({
+                position: location,
+                map: map
+            });
+        }
+    </script>
+</head>
+<body onload="initMap()">
+    <h1>{{ doctor.name }}'s Location</h1>
+    <div id="map"></div>
+</body>
+</html>

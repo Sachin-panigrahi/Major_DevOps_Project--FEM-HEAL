@@ -1,0 +1,62 @@
+<!-- doctor_detail.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ doctor.name }}</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        body {
+            background-color: #f8f9fa; /* Light background for contrast */
+        }
+
+        .card {
+            width: 300px; /* Set fixed width for the card */
+            margin: auto; /* Center the card */
+            opacity: 0; /* Start hidden for animation */
+            transform: translateY(-20px); /* Start slightly above */
+            animation: fadeInUp 0.5s forwards; /* Animation */
+            transition: transform 0.3s, box-shadow 0.3s; /* Smooth hover effect */
+        }
+
+        @keyframes fadeInUp {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .card:hover {
+            transform: translateY(-5px); /* Slightly lift the card on hover */
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2); /* Stronger shadow on hover */
+        }
+
+        .doctor-image {
+            max-width: 100%; /* Keep image responsive */
+            max-height: 200px; /* Limit the height of the image */
+            height: auto; /* Maintain aspect ratio */
+            border-radius: 10px; /* Round corners */
+        }
+    </style>
+</head>
+<body>
+    <div class="container mt-5">
+        <div class="card">
+            <img src="{{ doctor.image.url }}" alt="{{ doctor.name }}" class="card-img-top doctor-image">
+            <div class="card-body">
+                <h5 class="card-title">{{ doctor.name }}</h5>
+                <p class="card-text"><strong>Speciality:</strong> {{ doctor.speciality }}</p>
+                <p class="card-text"><strong>Address:</strong> {{ doctor.address }}</p>
+                <a href="{% url 'doctor_location' doctor.id %}" class="btn btn-primary">Get Exact Location on Map</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap JS and dependencies -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>

@@ -1,0 +1,178 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f0f0f0;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.disease-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.disease {
+    position: relative;
+    width: calc(33.333% - 20px);
+    overflow: hidden;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.banner {
+    background-color: #ff6f61;
+    color: #fff;
+    padding: 10px;
+    text-align: center;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.disease-image {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.hover-content {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.disease:hover .hover-content {
+    opacity: 1;
+}
+
+.hover-content ul {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 20px 0;
+    text-align: center;
+}
+
+.hover-content ul li {
+    margin: 10px 0;
+}
+
+.more-button {
+    padding: 10px 20px;
+    background-color: #ff6f61;
+    border: none;
+    color: #fff;
+    cursor: pointer;
+    border-radius: 4px;
+}
+
+.popup {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    justify-content: center;
+    align-items: center;
+}
+
+.popup-content {
+    width: 80%; /* Adjust the width as needed */
+    max-width: 800px; /* Set a maximum width */
+    max-height: 90vh; /* Set a maximum height to ensure the scrollbar appears */
+    overflow-y: auto; /* Add vertical scrolling if content exceeds max height */
+    padding: 20px; /* Add padding for better spacing */
+    box-sizing: border-box; /* Ensure padding is included in the total width and height */
+    background-color: #fff; /* Background color */
+    border-radius: 10px; /* Rounded corners */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Shadow for a lifted effect */
+    position: relative; /* Set position to relative to position the button */
+}
+
+/* Style for the close button */
+.close-popup {
+    position: absolute; /* Position the button absolutely within the popup */
+    top: 10px; /* Distance from the top */
+    right: 10px; /* Distance from the right */
+    background-color: #ff6f61; /* Background color */
+    color: white; /* Text color */
+    border: none; /* Remove border */
+    border-radius: 5px; /* Rounded corners */
+    padding: 10px; /* Padding for better touch target */
+    cursor: pointer; /* Change cursor on hover */
+}
+
+/* Change button color on hover */
+.close-popup:hover {
+    background-color: #e55b52; /* Darken the button on hover */
+}
+
+
+.popup-content .slider {
+    width: 100%;
+    overflow: hidden;
+}
+
+.popup-content .slides {
+    display: flex;
+    transition: transform 0.5s ease;
+}
+
+
+
+.popup-content .slides img {
+    /* height: 100%; */
+    width: 100%;
+    flex-shrink: 0;
+}
+
+
+.popup-content p {
+    margin-top: 20px;
+    text-align: justify;
+}
+
+
+#show-more {
+    margin-top: 20px;
+    padding: 10px 20px;
+    background-color: #ff6f61;
+    border: none;
+    color: #fff;
+    cursor: pointer;
+    border-radius: 4px;
+}
+
+.disease-detail {
+    display: none;
+}
+
+.short {
+    max-height: 100px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}

@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Customer Reviews Slider</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #958888;
+        }
+
+        .heading {
+            font-size: 36px;
+            font-weight: bold;
+            color: #333;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+            margin-bottom: 20px;
+            text-align: center;
+        }
+        
+        .slider-container {
+            width: 100%;
+            max-width: 800px;
+            overflow: hidden;
+            position: relative;
+        }
+        .slides {
+            display: flex;
+            transition: transform 0.5s ease-in-out;
+            width: 100%;
+        }
+        .slide {
+            min-width: 100%;
+            box-sizing: border-box;
+        }
+        .review-container {
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+            width: 100%;
+            padding: 40px;
+            text-align: center;
+            position: relative;
+            box-sizing: border-box;
+        }
+        .company-name {
+            font-size: 16px;
+            color: #aaa;
+            margin-bottom: 20px;
+        }
+        .profile-pic {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            overflow: hidden;
+            margin: 0 auto 20px;
+        }
+        .profile-pic img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        .stars {
+            margin: 20px 0;
+        }
+        .stars i {
+            color: #f39c12;
+            font-size: 20px;
+        }
+        .review-text {
+            font-size: 18px;
+            color: #333;
+            margin: 20px 0;
+            line-height: 1.6;
+        }
+        .reviewer-name {
+            font-weight: bold;
+            margin-top: 20px;
+            font-size: 20px;
+        }
+        .reviewer-role {
+            font-size: 14px;
+            color: #777;
+        }
+        .vertical-text {
+            writing-mode: vertical-lr;
+            transform: rotate(180deg);
+            font-size: 14px;
+            color: #777;
+            position: absolute;
+            top: 20px;
+            left: -60px;
+        }
+        .nav-buttons {
+            display: flex;
+            justify-content: space-between;
+            position: absolute;
+            top: 50%;
+            width: 100%;
+            transform: translateY(-50%);
+        }
+        .nav-buttons button {
+            background: none;
+            border: none;
+            font-size: 36px;
+            cursor: pointer;
+            color: #333;
+            padding: 0 20px;
+        }
+        .nav-buttons button:hover {
+            color: #f39c12;
+        }
+        
+    </style>
+</head>
+<body>
+
+    <div class="heading">WHAT DO OUR CUSTOMERS SAY ABOUT US?
+</div>
+    <div class="slider-container">
+        <div class="slides">
+            <!-- Slide 1 -->
+            <div class="slide">
+                <div class="review-container">
+                    <div class="company-name">FEM-HEAL</div>
+                    <div class="profile-pic">
+                        <img src="https://photosnow.org/wp-content/uploads/2024/04/cute-girl-pic-baby_18.jpg" alt="Reviewer">
+                    </div>
+                    <div class="stars">
+                        <i>&#9733;</i>
+                        <i>&#9733;</i>
+                        <i>&#9733;</i>
+                        <i>&#9733;</i>
+                        <i>&#9733;</i>
+
+                        <!-- <i style="color:#ccc;">&#9733;</i> -->
+                    </div>
+                    <div class="review-text">
+                        "FEM HEAL transformed my healthcare experience – personalized, professional, and empowering!,Thank you so much FEM HEAL“
+                    </div>
+                    <div class="reviewer-name">SAKSHI KUMAR</div>
+                    <div class="reviewer-role">FREQUENT CUSTOMER</div>
+                    <div class="vertical-text"></div>
+                </div>
+            </div>
+            <div class="slide">
+                <div class="review-container">
+                    <div class="company-name">FEM-HEAL</div>
+                    <div class="profile-pic">
+                        <img src="https://i.pinimg.com/736x/53/a0/13/53a013b7b03234d99cb20cf346f77b88.jpg" alt="Reviewer">
+                    </div>
+                    <div class="stars">
+                        <i>&#9733;</i>
+                        <i>&#9733;</i>
+                        <i>&#9733;</i>
+                        <i>&#9733;</i>
+                        <i style="color:#ccc;">&#9733;</i>
+                    </div>
+                    <div class="review-text">
+                        "Exceptional care and support from the entire FEM HEAL team. Highly recommended!"
+                    </div>
+                    <div class="reviewer-name">JHANVI MERCHANT</div>
+                    <div class="reviewer-role">FREQUENT MEMBER</div>
+                    <div class="vertical-text"></div>
+                </div>
+            </div>
+            <div class="slide">
+                <div class="review-container">
+                    <div class="company-name">FEM-HEAL</div>
+                    <div class="profile-pic">
+                        <img src="data:image/jpeg;base64,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" alt="Reviewer">
+                    </div>
+                    <div class="stars">
+                        <i>&#9733;</i>
+                        <i>&#9733;</i>
+                        <i>&#9733;</i>
+                        <i>&#9733;</i>
+                        <i>&#9733;</i>
+
+                        <!-- <i style="color:#ccc;">&#9733;</i> -->
+                    </div>
+                    <div class="review-text">
+                        "Thanks to FEM HEAL, I feel heard and valued in my healthcare journey."
+                    </div>
+                    <div class="reviewer-name">ANJALI ARORA</div>
+                    <div class="reviewer-role">REGULAR CUSTOMER</div>
+                    <div class="vertical-text"></div>
+                </div>
+            </div>
+            <div class="slide">
+                <div class="review-container">
+                    <div class="company-name">FEM-HEAL</div>
+                    <div class="profile-pic">
+                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRapKvpjKeoc7N_Acc8ojdmZq-MXp2bwTxioQ&s" alt="Reviewer">
+                    </div>
+                    <div class="stars">
+                        <i>&#9733;</i>
+                        <i>&#9733;</i>
+                        <i>&#9733;</i>
+                        <i>&#9733;</i>
+                        <i style="color:#ccc;">&#9733;</i>
+                    </div>
+                    <div class="review-text">
+                        "FEM HEAL's comprehensive approach has truly made a difference in my life."              
+                    </div>
+                    <div class="reviewer-name">TANISHA SINGH GREWAL</div>
+                    <div class="reviewer-role">FREQUENT CUSTOMER</div>
+                    <div class="vertical-text"></div>
+                </div>
+            </div>
+            <!-- Slide 2 -->
+            <div class="slide">
+                <div class="review-container">
+                    <div class="company-name">FEM-HEAL</div>
+                    <div class="profile-pic">
+                        <img src="https://live.staticflickr.com/2295/2326663795_5e0308d416_b.jpg" alt="Reviewer">
+                    </div>
+                    <div class="stars">
+                        <i>&#9733;</i>
+                        <i>&#9733;</i>
+                        <i>&#9733;</i>
+                        <i>&#9733;</i>
+                        <i>&#9733;</i>
+
+                        <!-- <i style="color:#ccc;">&#9733;</i> -->
+                    </div>
+                    <div class="review-text">
+
+                        Outstanding service and care – FEM HEAL is my go-to for women's health management.
+                    </div>
+                    <div class="reviewer-name">APARNA VEERAMALLA</div>
+                    <div class="reviewer-role">REGULAR CUSTOMER</div>
+                    <div class="vertical-text"></div>
+                </div>
+            </div>
+            <!-- Add more slides as needed -->
+        </div>
+        <div class="nav-buttons">
+            <button id="prev">&#10094;</button>
+            <button id="next">&#10095;</button>
+        </div>
+    </div>
+    <a href="/"><button style="margin-top: 10px; border: #ccc;color: black; background-color: aquamarine; padding: 20px; cursor: pointer;">Back To Home</button></a>
+
+
+    <script>
+        const slides = document.querySelector('.slides');
+        const prevButton = document.getElementById('prev');
+        const nextButton = document.getElementById('next');
+        let index = 0;
+
+        function showSlide(i) {
+            index += i;
+            if (index >= slides.children.length) {
+                index = 0;
+            } else if (index < 0) {
+                index = slides.children.length - 1;
+            }
+            slides.style.transform = `translateX(${-index * 100}%)`;
+        }
+
+        prevButton.addEventListener('click', () => showSlide(-1));
+        nextButton.addEventListener('click', () => showSlide(1));
+    </script>
+</body>
+</html>

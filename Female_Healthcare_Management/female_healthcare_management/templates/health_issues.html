@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Health Issues</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+        .container {
+            max-width: 1200px;
+            margin: auto;
+            padding: 20px;
+        }
+        .title {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .reference-item {
+            display: inline-block;
+            width: 24%;
+            margin: 0.5%;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            cursor: pointer;
+        }
+        .reference img {
+            width: 100%;
+            height: auto;
+        }
+        .overlay {
+            padding: 10px;
+        }
+        #detail {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.8);
+            color: white;
+            overflow: auto;
+        }
+        #detail .close {
+            position: absolute;
+            top: 10px;
+            right: 20px;
+            font-size: 30px;
+            cursor: pointer;
+        }
+        #detail-slider img {
+            max-width: 90%;
+            margin: 10px auto;
+            display: block;
+        }
+        #detail-content {
+            padding: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2 class="title">Health Issues</h2>
+
+        <div id="references-masonry">
+            <!-- Example of a reference item -->
+            <div class="reference-item" onclick="showDetail('PHYSICAL HEALTH', '/static/img/phyimg.png', 'Physical health is defined...', ['/static/img/ph3.jpeg', '/static/img/ph2.jfif', '/static/img/ph1.jfif'])">
+                <div class="reference">
+                    <img src="/static/img/phyimg.png" alt="PHYSICAL HEALTH" />
+                    <div class="overlay">
+                        <h3>PHYSICAL HEALTH</h3>
+                        <ul>
+                            <li>Brisk Walking</li>
+                            <li>Outdoor Sports</li>
+                            <li>Simple Exercises</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="reference-item" data-category="seo">
+                <div class="reference">
+                        <img src="/static/img/mentalimg.png" class="img-responsive" alt="" />
+
+                        <div class="overlay">
+                            <h3 class="reference-title">MENTAL HEALTH</h3> 
+                            <li><b>Practice Mindfulness</b></li>
+                            <li><b>Journal To Record Your Thoughts</b></li>
+                            <li><b>Talk To Therapist/Counselor</li></b></li>
+                        </div>
+                    </a>
+
+                    <div class="sr-only reference-description" data-images="img/meh3.jfif,img/meh2.jpg,img/meh4.jpeg">
+
+                        <p style="text-align: left;">Mental health includes our emotional, psychological, and social well-being. It affects how we think, feel, and act. It also helps determine how we handle stress, relate to others, and make healthy choices. Mental health is important at every stage of life, from childhood and adolescence through adulthood.
+                            Although the terms are often used interchangeably, poor mental health and mental illness are not the same. A person can experience poor mental health and not be diagnosed with a mental illness. Likewise, a person diagnosed with a mental illness can experience periods of physical, mental, and social well-being.</p>
+
+                        <p></p>
+
+                        
+                    </div>
+                </div>
+            </div>
+
+            <div class="reference-item" data-category="marketing">
+                <div class="reference">
+                    <a href="#">
+                        <img src="img/mentrualimg.png" class="img-responsive" alt="" />
+
+                        <div class="overlay">
+                            <h3 class="reference-title">MENSTRUAL HEALTH</h3> 
+
+                            <li><b>Eat Healthy</b></li>
+                            <li><b>Take Food Rich In Iron</b></li>
+                            <li><b>Maintain Hygiene</li></b>
+                
+                        </div>
+                    </a>
+
+                    <div class="sr-only reference-description" data-images="img/bc1.jpeg,img/bc2.jpeg,img/bc3.jpeg">
+
+                        <p style="text-align: left;">Menstrual health is defined as complete physical, mental, and social wellbeing in relation to the menstrual cycle.<br>
+                        
+                             This definition reflects the multifaceted nature of menstruation and the many ways the lives of those who menstruate can be affected by their ability to properly manage their menstrual health.
+                            Achieving good menstrual health is not just a matter of ensuring access to menstrual products but also relies on individuals having the resources they need to participate fully in all spheres of life during their menstrual cycle. These resources might illustratively include information, supplies, sanitation facilities, supportive environments (including sensitised teachers and work supervisors), and accessible health-care workers trained in menstrual health disorders.
+                            Millions of women and girls worldwide experience period poverty, described as limited access to period products, menstrual education, or adequate water sanitation and hygiene facilities.
+                        </br>
+                             In addition, cultural norms, stigma, and taboos surrounding menstruation create further barriers to achieving menstrual health. Although people's experiences of period poverty are varied and unique, the social determinants of health and structural determinants of gender inequality act as key drivers of period poverty across the globe.
+                            </p>
+
+                        
+
+                       
+                       
+                    </div>
+
+                </div>
+            </div>
+            
+
+            <!-- Add other reference items similarly -->
+        </div>
+    </div>
+
+    <div id="detail">
+        <span class="close" onclick="closeDetail()">&times;</span>
+        <div id="detail-slider"></div>
+        <div class="text-center">
+            <h1 id="detail-title">&nbsp;</h1>
+        </div>
+        <div id="detail-content"></div>
+    </div>
+
+    <script>
+        function showDetail(title, imageUrl, content, images) {
+            document.getElementById('detail-title').textContent = title;
+            document.getElementById('detail-content').textContent = content;
+            const slider = document.getElementById('detail-slider');
+            slider.innerHTML = '';
+            images.forEach(src => {
+                const img = document.createElement('img');
+                img.src = src;
+                slider.appendChild(img);
+            });
+            document.getElementById('detail').style.display = 'block';
+        }
+
+        function closeDetail() {
+            document.getElementById('detail').style.display = 'none';
+        }
+    </script>
+</body>
+</html>

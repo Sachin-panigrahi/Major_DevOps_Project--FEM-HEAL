@@ -1,0 +1,8 @@
+.imageContainer {
+margin-left:36%;
+display: inline-block;
+position: relative;
+text-align: center;
+color: rgb(64, 11, 124);
+background-image: url(img/textbg.jpeg);
+}

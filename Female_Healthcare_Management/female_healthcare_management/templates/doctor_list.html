@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Doctor List</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        body {
+            background-color: #f8f9fa; /* Light background for contrast */
+        }
+        .list-group-item {
+            transition: background-color 0.3s; /* Smooth background transition */
+        }
+        .list-group-item:hover {
+            background-color: #e9ecef; /* Change background on hover */
+        }
+    </style>
+</head>
+<body>
+    <div class="container mt-5">
+        <h1 class="text-center mb-4">Our Leading Doctors from Every Corner of India</h1>
+        
+        <!-- Search Form -->
+        <form method="GET" action="{% url 'doctor_list' %}" class="mb-4">
+            <div class="input-group">
+                <input type="text" name="q" class="form-control" placeholder="Search by name or specialty" aria-label="Search">
+                <div class="input-group-append">
+                    <button class="btn btn-primary" type="submit">Search</button>
+                </div>
+            </div>
+        </form>
+        
+        <ul class="list-group">
+            {% for doctor in doctors %}
+                <li class="list-group-item">
+                    <h5 class="mb-1">{{ doctor.name }}</h5>
+                    <p class="mb-1"><strong>Speciality:</strong> {{ doctor.speciality }}</p>
+                    <p class="mb-1"><strong>Address:</strong> {{ doctor.address }}</p>
+                    <a href="{% url 'doctor_detail' doctor.id %}" class="btn btn-link">View Details</a>
+                </li>
+            {% empty %}
+                <li class="list-group-item text-center">No doctors available at the moment.</li>
+            {% endfor %}
+        </ul>
+    </div>
+
+    <!-- Bootstrap JS and dependencies -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
