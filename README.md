@@ -5,10 +5,12 @@
 
 FEM-HEAL is a comprehensive healthcare management web application specifically designed to cater to female healthcare needs. This project aims to provide a seamless and user-friendly platform for managing various aspects of healthcare.
 ## Features
-
-- **Common Disease Prediction**: Predict common diseases like flu, cold, headache, diarrhea, constipation, jaundice, dengue, typhoid, malaria, and more.
-- **Ayurvedic Medicine Recommendations**: Get recommendations for ayurvedic treatments based on the predicted diseases.
 - **User Authentication**: Secure login with username and password.
+- **Dcotors List**: Contains certified doctors list from across India
+- **Mental Health Disease**: Contains major Mental Health Disease
+- **Physical Health Disease**: Contains major Physical Health Disease
+- **Menstrual Health Disease**: Contains major Menstrual Health Disease
+- **Relaxation App**: Contains a Relaxation App  & much more
 
 ## Tech Stack
 
@@ -76,5 +78,3 @@ We welcome contributions from the community. If you would like to contribute, pl
 3. Make your changes and commit them: `git commit -m 'Add some feature'`
 4. Push to the branch: `git push origin feature-branch`
 5. Create a pull request.
-
-By including all relevant details, this README file provides a clear overview of your FEM-HEAL project, instructions for setting up and using the application, and guidance on how to contribute.
