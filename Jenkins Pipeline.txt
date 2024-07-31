@@ -1,0 +1,28 @@
+This Jenkins pipeline orchestrates the seamless deployment of the FEM-HEAL web application, designed for female healthcare management, directly from our GitHub repository to a Kubernetes cluster. Here's a breakdown of the stages involved:
+
+
+pipeline{
+    agent any
+    stages{
+        stage("Code Checkout"){
+            steps{
+                git url:"https://github.com/Sachin-panigrahi/Major_DevOps_Project--FEM-HEAL", branch:"main"
+            }
+        }
+
+        stage("Deployment"){
+            steps{
+                sh "kubectl create -f Deployment.yaml"
+                sh "kubectl create -f Service.yaml"
+            }
+        }
+        
+        stage("Details of Deployment"){
+            steps{
+                sh "minikube ip"
+                sh "kubectl get svc"    
+                // open your favourite web browser and enter http://<minikube ip>:<NodePort eg- 30007>
+            }
+    }
+}
+}
