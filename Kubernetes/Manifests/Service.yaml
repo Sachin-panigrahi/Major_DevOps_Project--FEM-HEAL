@@ -1,0 +1,13 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: female-healthcare-management
+spec:
+  selector:
+    app: female-healthcare-management
+  ports:
+    - protocol: TCP
+      port: 80
+      targetPort: 8000
+      nodePort: 30007  # NodePort must be within the range of 30000-32767
+  type: NodePort
