@@ -7,6 +7,8 @@ WORKDIR /app
 # Copy the contents of the backend directory into the container at /app
 COPY Female_Healthcare_Management/  .
 
+COPY requirements.txt  .
+
 # Install dependencies specified in requirements.txt
 RUN pip install --no-cache-dir -r requirements.txt
 
