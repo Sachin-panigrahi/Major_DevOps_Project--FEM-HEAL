@@ -1,1 +1,21 @@
-
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: female-healthcare-management
+  labels:
+    app: female-healthcare-management
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: female-healthcare-management
+  template:
+    metadata:
+      labels:
+        app: female-healthcare-management
+    spec:
+      containers:
+      - name: female-healthcare-management
+        image: sachinpanigrahi/major_project_for_devops-female-healthcare-management:v1
+        ports:
+        - containerPort: 8000
