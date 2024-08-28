@@ -26,4 +26,4 @@ jobs:
       - name: Running Django Server
         run: |
           cd  Female_Healthcare_Management
-          python manage.py runserver
+          python manage.py test
