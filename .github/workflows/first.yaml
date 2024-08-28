@@ -7,22 +7,23 @@ on:
 
 jobs:
   build:
-    runs-on: ubuntu-latest  # Corrected to use a hyphen
+    runs-on: ubuntu-latest
 
     steps:
       - name: Code Checkout
-        uses: actions/checkout@v4  # Simplified to use the latest v4 version
+        uses: actions/checkout@v4
 
       - name: Install Python
-        uses: actions/setup-python@v5  # Simplified to use the latest v5 version
+        uses: actions/setup-python@v5
         with:
           python-version: '3.11'
 
       - name: Install Dependencies
         run: |
           python -m pip install --upgrade pip
-          pip install -r requirements.txt 
+          pip install -r requirements.txt
 
-      - name: Running Django Project  # It's better to run tests instead of the server
+      - name: Running Django Server
         run: |
+          cd  Female_Healthcare_Management
           python manage.py runserver
