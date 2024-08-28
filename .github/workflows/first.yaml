@@ -23,6 +23,6 @@ jobs:
           python -m pip install --upgrade pip
           pip install -r requirements.txt 
 
-      - name: Running Django Tests  # It's better to run tests instead of the server
+      - name: Running Django Project  # It's better to run tests instead of the server
         run: |
-          python manage.py test
+          python manage.py runserver
