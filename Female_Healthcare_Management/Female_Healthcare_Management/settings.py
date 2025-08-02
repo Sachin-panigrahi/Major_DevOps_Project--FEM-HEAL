@@ -29,6 +29,11 @@ DEBUG = True
 
 ALLOWED_HOSTS = ['*']
 
+CSRF_TRUSTED_ORIGINS = [
+    'https://femheal-sachinpanigrahi-dev.apps.rm2.thpm.p1.openshiftapps.com',
+]
+
+
 
 # Application definition
 
